@@ -19,5 +19,10 @@ namespace OOStepByStep
         {
             return this.Introduce() + $" I am a student of" + $"{classNumber.ClassNumber()}";
         }
+
+        public string IntroduceWithWelcome(IClass classNumber, Student newStudent)
+        {
+            return this.IntroduceWithClass(classNumber) + $" Welcome {newStudent.Name} join{classNumber.ClassNumber()}";
+        }
     }
 }
