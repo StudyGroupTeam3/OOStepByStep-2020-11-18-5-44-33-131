@@ -14,5 +14,10 @@ namespace OOStepByStep
         {
             return base.Introduce() + " I am a teacher.";
         }
+
+        public string IntroduceWithClass(IClass classNumber)
+        {
+            return this.Introduce() + $" I am a teacher of" + $"{classNumber.ClassNumber()}";
+        }
     }
 }

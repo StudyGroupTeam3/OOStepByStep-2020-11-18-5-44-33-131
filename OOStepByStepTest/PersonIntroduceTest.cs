@@ -49,5 +49,19 @@ namespace OOStepByStepTest
             // then
             Assert.Equal(expectResult, actual);
         }
+
+        [Fact]
+        public void IntroduceWithClassNumber()
+        {
+            // given
+            var teacher = new Teacher("Merry", 30);
+            var expectResult = "My name is Merry. I am 30 years old. I am a teacher. I am a teacher of class 2.";
+            var classNumber = new Class2();
+            // when
+            var actual = teacher.IntroduceWithClass(classNumber);
+
+            // then
+            Assert.Equal(expectResult, actual);
+        }
     }
 }
