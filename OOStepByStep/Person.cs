@@ -12,7 +12,7 @@
             this.age = age;
         }
 
-        public string Introduce()
+        public virtual string Introduce()
         {
             return $"My name is {this.name}. I am {this.age} years old.";
         }
