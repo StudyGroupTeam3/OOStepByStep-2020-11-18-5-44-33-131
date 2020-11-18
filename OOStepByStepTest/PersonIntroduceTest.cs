@@ -21,5 +21,33 @@ namespace OOStepByStepTest
             // then
             Assert.Equal(expectResult, actual);
         }
+
+        [Fact]
+        public void IntroduceStudent()
+        {
+            // given
+            var student = new Student("Tom", 21);
+            var expectResult = "My name is Tom. I am 21 years old. I am a student.";
+
+            // when
+            var actual = student.Introduce();
+
+            // then
+            Assert.Equal(expectResult, actual);
+        }
+
+        [Fact]
+        public void IntroduceTeacher()
+        {
+            // given
+            var teacher = new Teacher("Merry", 30);
+            var expectResult = "My name is Merry. I am 30 years old. I am a teacher.";
+
+            // when
+            var actual = teacher.Introduce();
+
+            // then
+            Assert.Equal(expectResult, actual);
+        }
     }
 }
