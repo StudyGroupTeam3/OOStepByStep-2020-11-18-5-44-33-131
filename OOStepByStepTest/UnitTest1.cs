@@ -92,10 +92,29 @@ namespace OOStepByStepTest
             var teacher = new Teacher("Amy", 30);
             var student = new Student("Tom", 18);
             var class2 = new Class(teacher, "class 2");
-            string expect = "My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Tom join class 2.";
+            string expect = "My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Tom join class 2.\n";
 
             //when
             var actual = class2.AddNewStudent(student);
+
+            //then
+            Assert.Equal(expect, actual);
+        }
+
+        [Fact]
+        public void Should_ClassMembers_Welcome_new_comer()
+        {
+            //given
+            var teacher = new Teacher("Amy", 30);
+            var student = new Student("Tom", 18);
+            var student2 = new Student("Jim", 18);
+            var class2 = new Class(teacher, "class 2");
+            class2.AddNewStudent(student);
+            string expect = "My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Jim join class 2.\n"
+                + "My name is Tom. I am 18 years old. I am a student of class 2. Welcome Jim join class 2.\n";
+
+            //when
+            var actual = class2.AddNewStudent(student2);
 
             //then
             Assert.Equal(expect, actual);
