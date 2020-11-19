@@ -52,5 +52,37 @@ namespace OOStepByStepTest
             //then
             Assert.Equal(expect, actual);
         }
+
+        [Fact]
+        public void Should_Student_introduce_with_and_class_number()
+        {
+            //given
+            var student = new Student("Tom", 18);
+            var teacher = new Teacher("Amy", 30);
+            var class2 = new Class(teacher, "class 2");
+            class2.AddNewStudent(student);
+            string expect = "My name is Tom. I am 18 years old. I am a student of class 2.";
+
+            //when
+            var actual = class2.IntroduceStudent(student);
+
+            //then
+            Assert.Equal(expect, actual);
+        }
+
+        [Fact]
+        public void Should_Teacher_introduce_himself_with_vocation_and_class_number()
+        {
+            //given
+            var teacher = new Teacher("Amy", 30);
+            var class2 = new Class(teacher, "class 2");
+            string expect = "My name is Amy. I am 30 years old. I am a teacher of class 2.";
+
+            //when
+            var actual = class2.IntroduceTeacher(teacher);
+
+            //then
+            Assert.Equal(expect, actual);
+        }
     }
 }
