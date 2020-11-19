@@ -3,9 +3,17 @@
     using System;
     public class Person
     {
-        public string SelfIntroduce()
+        private string name;
+        private int age;
+        public Person(string name, int age)
         {
-            return "My name is Tom. I am 21 years old";
+            this.name = name;
+            this.age = age;
+        }
+
+        public virtual string SelfIntroduce()
+        {
+            return $"My name is {name}. I am {age} years old.";
         }
     }
 }
