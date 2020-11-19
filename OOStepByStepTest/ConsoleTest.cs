@@ -10,17 +10,17 @@ namespace OOStepByStepTest
     public class ConsoleTest
     {
         [Fact]
-        public void Test_Console()
+        public void ShouldReturnIntroductionGivenAPerson()
         {
             // given
-            var fakeOutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeOutput));
+            string expected = "My name is Tom. I am 21 years old.";
 
             // when
-            new Class1().Print();
+            Person person = new Person("Tom", 21);
+            string actual = person.Say();
 
             // then
-            Assert.Equal("console\n", fakeOutput.ToString());
+            Assert.Equal(expected, actual);
         }
     }
 }
