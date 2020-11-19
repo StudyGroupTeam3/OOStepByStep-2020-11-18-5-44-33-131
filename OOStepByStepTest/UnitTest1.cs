@@ -6,10 +6,17 @@ namespace OOStepByStepTest
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void Should_Person_Say_Name_And_Age()
         {
-            var class1 = new Class1();
-            Assert.NotNull(class1);
+            //given
+            string expect = "My name is Tom. I am 21 years old";
+            var person = new Person();
+
+            //when
+            var actual = person.SelfIntroduce();
+
+            //then
+            Assert.Equal(expect, actual);
         }
     }
 }

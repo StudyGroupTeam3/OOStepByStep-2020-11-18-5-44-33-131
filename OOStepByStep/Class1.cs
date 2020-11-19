@@ -1,11 +1,11 @@
 ﻿namespace OOStepByStep
 {
     using System;
-    public class Class1
+    public class Person
     {
-        public void Print()
+        public string SelfIntroduce()
         {
-            Console.WriteLine("console");
+            return "My name is Tom. I am 21 years old";
         }
     }
 }
