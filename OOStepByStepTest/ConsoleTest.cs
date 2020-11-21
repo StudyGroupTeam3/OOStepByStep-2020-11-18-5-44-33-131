@@ -65,5 +65,19 @@ namespace OOStepByStepTest
             // then
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void ShouldReturnIntroductionGivenATeacherAndClassNumber()
+        {
+            // given
+            string expected = "My name is Amy. I am 30 years old. I am a teacher of class 2.";
+
+            // when
+            Teacher teacher = new Teacher("Amy", 30, "2");
+            string actual = teacher.SayWithClassNumber();
+
+            // then
+            Assert.Equal(expected, actual);
+        }
     }
 }
