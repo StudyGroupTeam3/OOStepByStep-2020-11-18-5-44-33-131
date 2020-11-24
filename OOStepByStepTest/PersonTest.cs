@@ -7,20 +7,20 @@ namespace OOStepByStepTest
     using OOStepByStep;
     using Xunit;
 
-    public class ConsoleTest
+    public class PersonTest
     {
         [Fact]
         public void Test_Console()
         {
             // given
-            var fakeOutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeOutput));
+            Person person = new Person("Tom", 21);
+            string expect = "My name is Tom. I am 21 years old.";
 
             // when
-            new Class1().Print();
+            string actual = person.Introduce();
 
             // then
-            Assert.Equal("console\n", fakeOutput.ToString());
+            Assert.Equal(expect, actual);
         }
     }
 }
