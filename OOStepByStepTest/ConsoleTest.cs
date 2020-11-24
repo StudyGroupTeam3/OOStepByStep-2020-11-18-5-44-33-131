@@ -10,17 +10,74 @@ namespace OOStepByStepTest
     public class ConsoleTest
     {
         [Fact]
-        public void Test_Console()
+        public void ShouldReturnIntroductionGivenAPerson()
         {
             // given
-            var fakeOutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeOutput));
+            string expected = "My name is Tom. I am 21 years old.";
 
             // when
-            new Class1().Print();
+            Person person = new Person("Tom", 21);
+            string actual = person.Say();
 
             // then
-            Assert.Equal("console\n", fakeOutput.ToString());
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ShouldReturnIntroductionGivenAStudent()
+        {
+            // given
+            string expected = "My name is Tom. I am 18 years old. I am a student.";
+
+            // when
+            Student student = new Student("Tom", 18);
+            string actual = student.Say();
+
+            // then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ShouldReturnIntroductionGivenATeacher()
+        {
+            // given
+            string expected = "My name is Amy. I am 30 years old. I am a teacher.";
+
+            // when
+            Teacher teacher
+                = new Teacher("Amy", 30);
+            string actual = teacher.Say();
+
+            // then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ShouldReturnIntroductionGivenAStudentAndClassNumber()
+        {
+            // given
+            string expected = "My name is Tom. I am 18 years old. I am a student of class 2.";
+
+            // when
+            Student student = new Student("Tom", 18, "2");
+            string actual = student.SayWithClassNumber();
+
+            // then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ShouldReturnIntroductionGivenATeacherAndClassNumber()
+        {
+            // given
+            string expected = "My name is Amy. I am 30 years old. I am a teacher of class 2.";
+
+            // when
+            Teacher teacher = new Teacher("Amy", 30, "2");
+            string actual = teacher.SayWithClassNumber();
+
+            // then
+            Assert.Equal(expected, actual);
         }
     }
 }
